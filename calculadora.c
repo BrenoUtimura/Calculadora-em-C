@@ -15,7 +15,7 @@ aplicação rodando ou finalizada);
 
 int main(void)
 {
-    int resp, op, calc;
+    int resp, op, calc, mat, fin;
 
     calc = 1;
 
@@ -24,7 +24,8 @@ int main(void)
         printf("-----------------------------\n");
         printf("Escolha a opção que desejar!\n");
         printf("1 - Calcular operações tradicionais?\n");
-        printf("2 - Fazer cálculos complexos?\n");
+        printf("2 - Cálculos Matemáticos\n");
+        printf("3 - Cálculos Financeiros\n");
         printf("---------------------------------\n");
         printf("Para parar o sistema digite 0!!\n\n");
 
@@ -35,44 +36,24 @@ int main(void)
         }
         else{
             if(resp == 1){
-                printf("\n1 - Soma\n");
-                printf("2 - Subtração\n");
-                printf("3 - Multiplicacao\n");
-                printf("4 - Divisao\n");
-
-                scanf("%d", &op);
+                op = resp;
 
                 operacao(op);
             }
             else{
                 if(resp == 2){
-                    printf("\nEscolha o cálculo que gostaria de estar realizando!\n");
-                    printf("----------------------------------------------------\n\n");
-                    printf("1 - Dizima Períodica\n");
-                    printf("----------------------------------------------------\n");
-                    printf("2 - Teorema de Pitagoras\n");
-                    printf("----------------------------------------------------\n");
-                    printf("3 - Areas\n");
-                    printf("----------------------------------------------------\n");
-                    printf("4 - Potenciacao\n");
-                    printf("----------------------------------------------------\n");
-                    printf("5 - Exponenciacao");
-                    printf("----------------------------------------------------\n");
-                    printf("6 - Logaritmo\n");
-                    printf("----------------------------------------------------\n");
-                    printf("7 - Distancia entre dois pontos\n");
-                    printf("----------------------------------------------------\n");
-                    printf("8 - Equacao do Primeiro Grau\n");
-                    printf("----------------------------------------------------\n");
-                    printf("9 - Equacao do Segundo Grau\n");
-                    printf("----------------------------------------------------\n");
-                    printf("10 - Funcao do Primeiro Grau\n");
-                    printf("----------------------------------------------------\n");
-                    printf("11 - Funcao do Segundo Grau\n");
-                    printf("----------------------------------------------------\n");
-                    printf("12 - Funcao Exponencial\n");
-                    printf("----------------------------------------------------\n");
-                    printf("13 - Funcao Logaritma\n");
+                    
+                    mat = 2;
+
+                    calc_mat(mat);
+                }
+                else {
+                    if(resp == 3){
+
+                        fin = resp;
+
+                        calc_fin(fin);
+                    }
                 }
             }
         }
