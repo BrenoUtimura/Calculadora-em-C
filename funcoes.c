@@ -134,6 +134,20 @@ void calc_mat(int mat){
 
                     printf("%d", hipot);
                 }
+                else{
+                    if(resp2 == 2){
+                        printf("Coloque 0 para o valor que estiver faltando!\n");
+
+                        printf("Hipotenusa:  ");
+                        scanf("%d", &hipot);
+
+                        printf("Cateto1:  ");
+                        scanf("%d", &cat1);
+
+                        printf("Cateto2:  ");
+                        scanf("%d", &cat2);
+                    }
+                }
 
             break;
 
