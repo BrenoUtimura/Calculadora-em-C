@@ -68,6 +68,75 @@ void operacao(int op){
 
 }
 
+/* Função de conversão de bases numéricas */
+void baseNum(int numBase){
+    int resp, div, modResult, num, pot, soma;
+
+    printf("Qual das opcoes deseja calcular?\n");
+    printf("-----------------------------------\n");
+    printf("1 - Decimal para Binario\n");
+    printf("2 - Binario para Decimal\n");
+    printf("3 - Binario para Hexadecimal\n");
+    printf("4 - Hexadecimal para Octal\n");
+    printf("-----------------------------------\n\n");
+
+    scanf("%d", &resp);
+
+    /* Decimal para Binario */
+    if(resp == 1){
+        printf("Informe o numero que deseja\n");
+        scanf("%d", &num);
+
+        div = num;
+        while(div >= 2){
+            modResult = div % 2;
+            div = div / 2;
+
+            printf("%d\n", modResult);
+        }
+        /* Para quando div for igual a 1 ou 0 */
+        printf("%d\n", div);
+    }
+    else{
+        /* Binario para Decimal */
+        if(resp == 2){
+            printf("Informe o numero binario dando enter para cada numero digitado!\n");
+            printf("E informe o numero binaro de tras pra frente para dar certo!\n");
+            printf("E para parar digite -1\n");
+
+            scanf("%d", &num);
+            soma = 0;
+            pot = 1;
+
+            while(num != -1){
+
+                soma = (num * pot) + soma;
+                pot = pot * 2;
+
+                scanf("%d", &num);
+            }
+
+            printf("%d", soma);
+
+        }
+        else{
+            /* Binario para Hexadecimal */
+            if(resp == 3){
+                
+            }
+            else{
+                /* Hexadecimal para Octal */
+                if(resp == 4){
+                    
+                }
+            }
+        }
+    }
+
+}
+
+
+/* Funções de cálculos matemáticos */
 void calc_mat(int mat){
 
     int resp, resp2, hipot, cateto, cat1, cat2;
@@ -132,11 +201,11 @@ void calc_mat(int mat){
                     cateto = pow(cat1, 2) + pow(cat2, 2);
                     hipot = pow(cateto, 2);
 
-                    printf("%d", hipot);
+                    printf("O valor da hipotenusa é: %d", hipot);
                 }
                 else{
                     if(resp2 == 2){
-                        printf("Coloque 0 para o valor que estiver faltando!\n");
+                        printf("Coloque 0 para o valor que estiver faltando e caso tiver!\n");
 
                         printf("Hipotenusa:  ");
                         scanf("%d", &hipot);
@@ -146,6 +215,14 @@ void calc_mat(int mat){
 
                         printf("Cateto2:  ");
                         scanf("%d", &cat2);
+
+                        if(cat1 == 0){
+
+                        }
+
+                        if(cat2 == 0){
+
+                        }
                     }
                 }
 

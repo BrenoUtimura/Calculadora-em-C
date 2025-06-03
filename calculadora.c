@@ -15,7 +15,7 @@ aplicação rodando ou finalizada);
 
 int main(void)
 {
-    int resp, op, calc, mat, fin;
+    int resp, op, calc, mat, fin, numBase;
 
     calc = 1;
 
@@ -26,6 +26,7 @@ int main(void)
         printf("1 - Calcular operações tradicionais?\n");
         printf("2 - Cálculos Matemáticos\n");
         printf("3 - Cálculos Financeiros\n");
+        printf("4 - Conversao de Bases Numéricas\n");
         printf("---------------------------------\n");
         printf("Para parar o sistema digite 0!!\n\n");
 
@@ -53,6 +54,14 @@ int main(void)
                         fin = resp;
 
                         calc_fin(fin);
+                    }
+                    else{
+                        if(resp == 4){
+
+                            numBase = resp;
+
+                            baseNum(numBase);
+                        }
                     }
                 }
             }
