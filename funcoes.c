@@ -77,13 +77,18 @@ void baseNum(int numBase){
     printf("1 - Decimal para Binario\n");
     printf("2 - Binario para Decimal\n");
     printf("3 - Binario para Hexadecimal\n");
+<<<<<<< HEAD
     printf("4 - Hexadecimal para Binario\n");
     printf("5 - Binario para Octal\n");
     printf("6 - Octal para Binario\n");
+=======
+    printf("4 - Hexadecimal para Octal\n");
+>>>>>>> aa47f0cf3ecd26543a6c0c0ac16c2a1e5b1b27de
     printf("-----------------------------------\n\n");
 
     scanf("%d", &resp);
 
+<<<<<<< HEAD
     switch (resp)
     {
         /* Decimal para Binario */
@@ -104,6 +109,26 @@ void baseNum(int numBase){
 
         /* Binario para Decimal */
         case 2:
+=======
+    /* Decimal para Binario */
+    if(resp == 1){
+        printf("Informe o numero que deseja\n");
+        scanf("%d", &num);
+
+        div = num;
+        while(div >= 2){
+            modResult = div % 2;
+            div = div / 2;
+
+            printf("%d\n", modResult);
+        }
+        /* Para quando div for igual a 1 ou 0 */
+        printf("%d\n", div);
+    }
+    else{
+        /* Binario para Decimal */
+        if(resp == 2){
+>>>>>>> aa47f0cf3ecd26543a6c0c0ac16c2a1e5b1b27de
             printf("Informe o numero binario dando enter para cada numero digitado!\n");
             printf("E informe o numero binaro de tras pra frente para dar certo!\n");
             printf("E para parar digite -1\n");
@@ -121,6 +146,7 @@ void baseNum(int numBase){
             }
 
             printf("%d", soma);
+<<<<<<< HEAD
         break;
 
         /* Binario para Hexadecimal */
@@ -145,6 +171,24 @@ void baseNum(int numBase){
     
     }
     
+=======
+
+        }
+        else{
+            /* Binario para Hexadecimal */
+            if(resp == 3){
+                
+            }
+            else{
+                /* Hexadecimal para Octal */
+                if(resp == 4){
+                    
+                }
+            }
+        }
+    }
+
+>>>>>>> aa47f0cf3ecd26543a6c0c0ac16c2a1e5b1b27de
 }
 
 

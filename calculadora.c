@@ -23,7 +23,11 @@ int main(void)
         printf("\nSeja Bem-vindo a Calculadora!\n");
         printf("-----------------------------\n");
         printf("Escolha a opção que desejar!\n");
+<<<<<<< HEAD
         printf("1 - Calcular operações tradicionais\n");
+=======
+        printf("1 - Calcular operações tradicionais?\n");
+>>>>>>> aa47f0cf3ecd26543a6c0c0ac16c2a1e5b1b27de
         printf("2 - Cálculos Matemáticos\n");
         printf("3 - Cálculos Financeiros\n");
         printf("4 - Conversao de Bases Numéricas\n");
@@ -32,6 +36,7 @@ int main(void)
 
         scanf("%d", &resp);
 
+<<<<<<< HEAD
         switch (resp)
         {
             /* Calcular operações tradicionais */
@@ -62,6 +67,41 @@ int main(void)
                 baseNum(numBase);
             break;
         
+=======
+        if(resp == 0){
+            calc = 0;
+        }
+        else{
+            if(resp == 1){
+                op = resp;
+
+                operacao(op);
+            }
+            else{
+                if(resp == 2){
+                    
+                    mat = 2;
+
+                    calc_mat(mat);
+                }
+                else {
+                    if(resp == 3){
+
+                        fin = resp;
+
+                        calc_fin(fin);
+                    }
+                    else{
+                        if(resp == 4){
+
+                            numBase = resp;
+
+                            baseNum(numBase);
+                        }
+                    }
+                }
+            }
+>>>>>>> aa47f0cf3ecd26543a6c0c0ac16c2a1e5b1b27de
         }
     }
 
