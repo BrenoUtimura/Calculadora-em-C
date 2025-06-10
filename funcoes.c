@@ -1,5 +1,29 @@
 #include "arquivo.h"
 
+/*
+-- Função de operação matematica
+    num: 
+    conta:
+    tipo_op:
+
+-- Função de conversão de base numérica
+    resp:
+    div:
+    modResult:
+    num:
+    pot:
+    soma:
+
+-- Função de cálculos matemáticos
+    resp:
+    resp2:
+    hipot:
+    cateto:
+    cat1:
+    cat2:
+
+*/
+
 /* Função que calcula as operações normais como soma, subtração, multiplicação e divisão */
 void operacao(int op){
     
@@ -77,18 +101,14 @@ void baseNum(int numBase){
     printf("1 - Decimal para Binario\n");
     printf("2 - Binario para Decimal\n");
     printf("3 - Binario para Hexadecimal\n");
-<<<<<<< HEAD
     printf("4 - Hexadecimal para Binario\n");
     printf("5 - Binario para Octal\n");
     printf("6 - Octal para Binario\n");
-=======
-    printf("4 - Hexadecimal para Octal\n");
->>>>>>> aa47f0cf3ecd26543a6c0c0ac16c2a1e5b1b27de
+    printf("7 - Hexadecimal para Octal\n");
     printf("-----------------------------------\n\n");
 
     scanf("%d", &resp);
 
-<<<<<<< HEAD
     switch (resp)
     {
         /* Decimal para Binario */
@@ -109,26 +129,6 @@ void baseNum(int numBase){
 
         /* Binario para Decimal */
         case 2:
-=======
-    /* Decimal para Binario */
-    if(resp == 1){
-        printf("Informe o numero que deseja\n");
-        scanf("%d", &num);
-
-        div = num;
-        while(div >= 2){
-            modResult = div % 2;
-            div = div / 2;
-
-            printf("%d\n", modResult);
-        }
-        /* Para quando div for igual a 1 ou 0 */
-        printf("%d\n", div);
-    }
-    else{
-        /* Binario para Decimal */
-        if(resp == 2){
->>>>>>> aa47f0cf3ecd26543a6c0c0ac16c2a1e5b1b27de
             printf("Informe o numero binario dando enter para cada numero digitado!\n");
             printf("E informe o numero binaro de tras pra frente para dar certo!\n");
             printf("E para parar digite -1\n");
@@ -146,7 +146,6 @@ void baseNum(int numBase){
             }
 
             printf("%d", soma);
-<<<<<<< HEAD
         break;
 
         /* Binario para Hexadecimal */
@@ -170,25 +169,6 @@ void baseNum(int numBase){
         break;
     
     }
-    
-=======
-
-        }
-        else{
-            /* Binario para Hexadecimal */
-            if(resp == 3){
-                
-            }
-            else{
-                /* Hexadecimal para Octal */
-                if(resp == 4){
-                    
-                }
-            }
-        }
-    }
-
->>>>>>> aa47f0cf3ecd26543a6c0c0ac16c2a1e5b1b27de
 }
 
 
@@ -196,6 +176,7 @@ void baseNum(int numBase){
 void calc_mat(int mat){
 
     int resp, resp2, hipot, cateto, cat1, cat2;
+    float a, b, c, x1, x2, delta;
 
     resp = 0;
 
@@ -237,11 +218,13 @@ void calc_mat(int mat){
 
         switch (resp)
         {
-            case 1: /* Dizima Periódica */
+            /* Dizima Periódica */
+            case 1: 
                 /* code */
             break;
         
-            case 2: /* Teorema de Pitogoras */
+            /* Teorema de Pitogoras */
+            case 2: 
                 printf("Vai ter que definir o valor da hipotenusa?\n");
                 printf("1 - Sim   e   2 - Não");
                 scanf("%d", &resp2);
@@ -272,11 +255,24 @@ void calc_mat(int mat){
                         printf("Cateto2:  ");
                         scanf("%d", &cat2);
 
+                        /* Nessa parte seria para quando apenas um dos catetos não possui valor
+                        informado neles */
                         if(cat1 == 0){
+                            cat1 = pow(hipot, 2) - pow(cat2, 2);
+                            cat1 = pow(cat1, 2);
 
+                            printf("O valor do cateto A é: %d", cat1);
                         }
 
                         if(cat2 == 0){
+                            cat2 = pow(hipot, 2) - pow(cat1, 2);
+                            cat2 = pow(cat2, 2);
+
+                            printf("O valor do cateto A é: %d", cat2);
+                        }
+
+                        if(cat1 == 0 && cat2 == 0){
+                            printf("O teorema de pitagoras não pode ser resolvido pois precisa de pelo menos um dos catetos informados!!\n");
 
                         }
                     }
@@ -284,55 +280,107 @@ void calc_mat(int mat){
 
             break;
 
-            case 3: /* Areas */
+            /* Areas */
+            case 3: 
+                printf("Deseja calcular a area de qual forma geometrica?\n");
+                printf("--------------------------------------------------\n\n");
+                printf("1 - Quadrado\n");
+                printf("2 - Triangulo\n");
+                printf("3 - Retangulo\n");
+                printf("--------------------------------------------------\n\n");
+            break;
+
+            /* Potenciação */
+            case 4: 
                 /* code */
             break;
 
-            case 4: /* Potenciação */
+            /* Exponenciação */
+            case 5: 
                 /* code */
             break;
 
-            case 5: /* Exponenciação */
+            /* Logaritmo */
+            case 6: 
                 /* code */
             break;
 
-            case 6: /* Logaritmo */
+            /* Radiciação */
+            case 7: 
                 /* code */
             break;
 
-            case 7: /* Radiciação */
+            /* Distancia entre dois pontos */
+            case 8: 
                 /* code */
             break;
 
-            case 8: /* Distancia entre dois pontos */
+            /* Equação do primeiro grau */
+            case 9: 
                 /* code */
             break;
 
-            case 9: /* Equação do primeiro grau */
+            /* Equação do segundo grau */
+            case 10: 
+                printf("Informe os valores da formula ax² + bx + c = 0:\n");
+                printf("Informe o valor de A: ");
+                scanf("%f", &a);
+                printf("Informe o valor de B: ");
+                scanf("%f", &b);
+                printf("Informe o valor de C: ");
+                scanf("%f", &c);
+
+                delta = pow(b, 2) - 4 * a * c;
+
+                if(delta > 0){
+                    x1 = (-b + sqrt(delta)) / 2 * a;
+                    x2 = (-b - sqrt(delta)) / 2 * a;
+
+                    printf("A equação possui duas raizes:\n");
+                    printf("x1 = %.2f\n", x1);
+                    printf("x2 = %.2f\n", x2);
+                }
+                else{
+                    if(delta == 0){
+                        x1 = (-b) / 2 * a;
+
+                        printf("A equação possui apenas uma raiz real!\n");
+                        printf("x1 = %.2f\n", x1);
+                    }
+                    else{
+                        if(delta < 0){
+                            printf("Não tem raízes reais!!\n");
+                        }
+                    }
+                }
+                
+
+            break;
+
+            /* Função do primeiro grau */
+            case 11: 
                 /* code */
             break;
 
-            case 10: /* Equação do segundo grau */
+            /* Função do segundo grau */
+            case 12: 
                 /* code */
             break;
 
-            case 11: /* Função do primeiro grau */
+            /* Função Exponencial */
+            case 13: 
                 /* code */
             break;
 
-            case 12: /* Função do segundo grau */
-                /* code */
-            break;
-
-            case 13: /* Função Exponencial */
-                /* code */
-            break;
-
-            case 14: /* Função Logarítma */
+            /* Função Logarítma */
+            case 14: 
                 /* code */
             break;
         }
 
+        printf("Deseja continuar com as operações?\n");
+        printf("Digite 1 para sim e -1 para não");
+        scanf("%d", &resp);
     }
     
 }
