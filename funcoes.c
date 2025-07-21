@@ -1,29 +1,5 @@
 #include "arquivo.h"
 
-/*
--- Função de operação matematica
-    num: 
-    conta:
-    tipo_op:
-
--- Função de conversão de base numérica
-    resp:
-    div:
-    modResult:
-    num:
-    pot:
-    soma:
-
--- Função de cálculos matemáticos
-    resp:
-    resp2:
-    hipot:
-    cateto:
-    cat1:
-    cat2:
-
-*/
-
 /* Função que calcula as operações normais como soma, subtração, multiplicação e divisão */
 void operacao(int op){
     
@@ -175,7 +151,7 @@ void baseNum(int numBase){
 /* Funções de cálculos matemáticos */
 void calc_mat(int mat){
 
-    int resp, resp2, hipot, cateto, cat1, cat2;
+    int resp, resp2, hipot, cateto, cat1, cat2, area, base, altura, lado;
     float a, b, c, x1, x2, delta;
 
     resp = 0;
@@ -186,31 +162,18 @@ void calc_mat(int mat){
         printf("Digite -1 para poder sair!\n");
         printf("----------------------------------------------------\n\n");
         printf("1 - Dizima Períodica\n");
-        printf("----------------------------------------------------\n");
         printf("2 - Teorema de Pitagoras\n");
-        printf("----------------------------------------------------\n");
         printf("3 - Areas\n");
-        printf("----------------------------------------------------\n");
         printf("4 - Potenciacao\n");
-        printf("----------------------------------------------------\n");
         printf("5 - Exponenciacao");
-        printf("----------------------------------------------------\n");
         printf("6 - Logaritmo\n");
-        printf("----------------------------------------------------\n");
         printf("7 - Radiciacao\n");
-        printf("----------------------------------------------------\n");
         printf("8 - Distancia entre dois pontos\n");
-        printf("----------------------------------------------------\n");
         printf("9 - Equacao do Primeiro Grau\n");
-        printf("----------------------------------------------------\n");
         printf("10 - Equacao do Segundo Grau\n");
-        printf("----------------------------------------------------\n");
         printf("11 - Funcao do Primeiro Grau\n");
-        printf("----------------------------------------------------\n");
         printf("12 - Funcao do Segundo Grau\n");
-        printf("----------------------------------------------------\n");
         printf("13 - Funcao Exponencial\n");
-        printf("----------------------------------------------------\n");
         printf("14 - Funcao Logaritma\n");
         printf("----------------------------------------------------\n");
 
@@ -288,6 +251,30 @@ void calc_mat(int mat){
                 printf("2 - Triangulo\n");
                 printf("3 - Retangulo\n");
                 printf("--------------------------------------------------\n\n");
+
+                scanf("%d", &resp2);
+
+                switch (resp2)
+                {
+                    case 1:
+                        /* code */
+                    break;
+
+                    case 2:
+                        printf("Informe a o valor da Base: \n");
+                        scanf("%d", &base);
+                        printf("Informe o valor da Altura: \n");
+                        scanf("%d", &altura);
+
+                        area = (base * altura) / 2;
+
+                        printf("A area do triângulo é: %d\n", area);
+                    break;
+
+                    case 3:
+                        /* code */
+                    break;
+                }
             break;
 
             /* Potenciação */
