@@ -1,0 +1,355 @@
+#include "arquivo.h"
+
+const float PI = 3.14;
+
+/* Função que calcula as operações normais como soma, subtração, multiplicação e divisão */
+void operacao(int op){
+    
+    float num, conta;
+    char tipo_op;
+
+    if(op == 1){
+        printf("\nPara poder para a execução da conta digite 0 no tipo de operação!!\n");
+        printf("Informe primeiro o icone da operacao que deseja fazer: \n");
+
+        conta = 0;
+
+        do{
+            scanf("%c", &tipo_op);
+
+            switch (tipo_op)
+            {
+                case '+':
+                    printf("Informe os números que vc gostaria de somar: \n");
+                    scanf("%f", &num);
+
+                    conta = conta + num;
+
+                    printf("\n----------------------------\n");
+                    printf("%.2f", conta);
+                    printf("\n----------------------------\n");
+                break;
+                
+                case '-':
+                    printf("Informe os números que vc gostaria de somar: \n");
+                    scanf("%f", &num);
+
+                    conta = conta - num;
+
+                    printf("\n----------------------------\n");
+                    printf("%.2f", conta);
+                    printf("\n----------------------------\n");
+                break;
+
+                case '*':
+                    printf("Informe os números que vc gostaria de somar: \n");
+                    scanf("%f", &num);
+
+                    conta = conta * num;
+
+                    printf("\n----------------------------\n");
+                    printf("%.2f", conta);
+                    printf("\n----------------------------\n");
+                break;
+
+                case '/':
+                    printf("Informe os números que vc gostaria de somar: \n");
+                    scanf("%f", &num);
+
+                    conta = conta / num;
+
+                    printf("\n----------------------------\n");
+                    printf("%.2f", conta);
+                    printf("\n----------------------------\n");
+                break;
+            }
+
+            printf("Informe primeiro o icone da operacao que deseja fazer: \n");
+        }while(tipo_op == 0);
+    }
+
+}
+
+
+/* Funções de cálculos matemáticos */
+void calc_mat(int mat){
+
+    int resp, resp2, hipot, cateto, cat1, cat2, pot, potencia, num, i, n;
+    float a, b, c, x1, x2, delta, raio, area, base, baseM, altura, lado;
+    float diagonalM, diagonalm;
+
+    resp = 0;
+
+    while(resp != -1){
+
+        printf("\nEscolha o cálculo que gostaria de estar realizando!\n");
+        printf("Digite -1 para poder sair!\n");
+        printf("----------------------------------------------------\n\n");
+        printf("1 - Dizima Períodica\n");
+        printf("2 - Teorema de Pitagoras\n");
+        printf("3 - Areas\n");
+        printf("4 - Potenciacao\n");
+        printf("5 - Exponenciacao");
+        printf("6 - Logaritmo\n");
+        printf("7 - Radiciacao\n");
+        printf("8 - Distancia entre dois pontos\n");
+        printf("9 - Equacao do Primeiro Grau\n");
+        printf("10 - Equacao do Segundo Grau\n");
+        printf("11 - Funcao do Primeiro Grau\n");
+        printf("12 - Funcao do Segundo Grau\n");
+        printf("13 - Funcao Exponencial\n");
+        printf("14 - Funcao Logaritma\n");
+        printf("----------------------------------------------------\n");
+
+        scanf("%d", &resp);
+
+        switch (resp)
+        {
+            /* Dizima Periódica */
+            case 1: 
+                /* code */
+            break;
+        
+            /* Teorema de Pitogoras */
+            case 2: 
+                printf("Vai ter que definir o valor da hipotenusa?\n");
+                printf("1 - Sim   e   2 - Não");
+                scanf("%d", &resp2);
+
+                if(resp2 = 1){
+                    printf("Informe os valores dos catetos para definir a Hipotenusa\n");
+                    printf("Cateto1:  ");
+                    scanf("%d", &cat1);
+
+                    printf("Cateto2:  ");
+                    scanf("%d", &cat2);
+
+                    cateto = pow(cat1, 2) + pow(cat2, 2);
+                    hipot = pow(cateto, 2);
+
+                    printf("O valor da hipotenusa é: %d", hipot);
+                }
+                else{
+                    if(resp2 == 2){
+                        printf("Coloque 0 para o valor que estiver faltando e caso tiver!\n");
+
+                        printf("Hipotenusa:  ");
+                        scanf("%d", &hipot);
+
+                        printf("Cateto1:  ");
+                        scanf("%d", &cat1);
+
+                        printf("Cateto2:  ");
+                        scanf("%d", &cat2);
+
+                        /* Nessa parte seria para quando apenas um dos catetos não possui valor
+                        informado neles */
+                        if(cat1 == 0){
+                            cat1 = pow(hipot, 2) - pow(cat2, 2);
+                            cat1 = pow(cat1, 2);
+
+                            printf("O valor do cateto A é: %d", cat1);
+                        }
+
+                        if(cat2 == 0){
+                            cat2 = pow(hipot, 2) - pow(cat1, 2);
+                            cat2 = pow(cat2, 2);
+
+                            printf("O valor do cateto A é: %d", cat2);
+                        }
+
+                        if(cat1 == 0 && cat2 == 0){
+                            printf("O teorema de pitagoras não pode ser resolvido pois precisa de pelo menos um dos catetos informados!!\n");
+
+                        }
+                    }
+                }
+
+            break;
+
+            /* Areas */
+            case 3: 
+                printf("Deseja calcular a area de qual forma geometrica?\n");
+                printf("--------------------------------------------------\n\n");
+                printf("1 - Quadrado\n");
+                printf("2 - Triangulo\n");
+                printf("3 - Retangulo\n");
+                printf("4 - Trapezio\n");
+                printf("5 - Circulo\n");
+                printf("6 - Losango\n");
+                printf("--------------------------------------------------\n\n");
+
+                scanf("%d", &resp2);
+
+                switch (resp2)
+                {
+                    /* Area do Quadrado */
+                    case 1:
+                        printf("Informe a medida do lado do quadrado: \n");
+                        scanf("%f", &lado);
+
+                        area = lado * lado;
+
+                        printf("A area do Quadrado e de: %.2f\n", area);
+                    break;
+
+                    /* Area do Triangulo */
+                    case 2:
+                        printf("Informe a o valor da Base: \n");
+                        scanf("%f", &base);
+                        printf("Informe o valor da Altura: \n");
+                        scanf("%f", &altura);
+
+                        area = (base * altura) / 2;
+
+                        printf("A area do Triangulo e de: %.2f\n", area);
+                    break;
+
+                    /* Area do Retangulo */
+                    case 3:
+                        printf("Informe a Base: \n");
+                        scanf("%f", &base);
+                        printf("Informe a Altura: \n");
+                        scanf("%f", &altura);
+
+                        area = base * altura;
+
+                        printf("A area desse Retangulo e de: %.2f\n", area);
+                    break;
+
+                    /* Area do Trapezio */
+                    case 4:
+                        printf("Informe a Base maior: \n");
+                        scanf("%f", &baseM);
+                        printf("Informe a Base menor: \n");
+                        scanf("%f", &base);
+                        printf("Informe a Altura: \n");
+                        scanf("%f", &altura);
+
+                        area = ((baseM + base) * altura) / 2;
+
+                        printf("A area do Trapezio e de: %.2f\n", area);
+                    break;
+
+                    /* Area do Circulo */
+                    case 5:
+                        printf("Informe o valor do Raio: \n");
+                        scanf("%f", &raio);
+
+                        area = (raio * raio) * PI;
+
+                        printf("A area desse Circulo e de: %.2f\n", area);
+                    break;
+
+                    case 6:
+                        printf("Informe o valor da Diagonal Maior: \n");
+                        scanf("%f", &diagonalM);
+                        printf("Informe o valor da Diagonal Menor: \n");
+                        scanf("%f", &diagonalm);
+
+                        area = (diagonalM * diagonalm) / 2;
+
+                        printf("A area do Losango e de: %.2f\n", area);
+                    break;
+                }
+            break;
+
+            /* Potenciação */
+            case 4: 
+                printf("Informe o número que deseja saber a potencia: \n");
+                scanf("%d", &num);
+                printf("Informe o indice da potencia que ele vai ter: \n");
+                scanf("%d", &n);
+
+                pot = pow(num, n);
+
+                printf("A potencia de %d é: %d\n", num, pot);
+            break;
+
+            /* Exponenciação */
+            case 5: 
+                /* code */
+            break;
+
+            /* Logaritmo */
+            case 6: 
+                /* code */
+            break;
+
+            /* Radiciação */
+            case 7: 
+                /* code */
+            break;
+
+            /* Distancia entre dois pontos */
+            case 8: 
+                /* code */
+            break;
+
+            /* Equação do primeiro grau */
+            case 9: 
+                /* code */
+            break;
+
+            /* Equação do segundo grau */
+            case 10: 
+                printf("Informe os valores da formula ax² + bx + c = 0:\n");
+                printf("Informe o valor de A: ");
+                scanf("%f", &a);
+                printf("Informe o valor de B: ");
+                scanf("%f", &b);
+                printf("Informe o valor de C: ");
+                scanf("%f", &c);
+
+                delta = pow(b, 2) - 4 * a * c;
+
+                if(delta > 0){
+                    x1 = (-b + sqrt(delta)) / 2 * a;
+                    x2 = (-b - sqrt(delta)) / 2 * a;
+
+                    printf("A equação possui duas raizes:\n");
+                    printf("x1 = %.2f\n", x1);
+                    printf("x2 = %.2f\n", x2);
+                }
+                else{
+                    if(delta == 0){
+                        x1 = (-b) / 2 * a;
+
+                        printf("A equação possui apenas uma raiz real!\n");
+                        printf("x1 = %.2f\n", x1);
+                    }
+                    else{
+                        if(delta < 0){
+                            printf("Não tem raízes reais!!\n");
+                        }
+                    }
+                }
+            break;
+
+            /* Função do primeiro grau */
+            case 11: 
+                /* code */
+            break;
+
+            /* Função do segundo grau */
+            case 12: 
+                /* code */
+            break;
+
+            /* Função Exponencial */
+            case 13: 
+                /* code */
+            break;
+
+            /* Função Logarítma */
+            case 14: 
+                /* code */
+            break;
+        }
+
+        printf("Deseja continuar com as operações?\n");
+        printf("Digite 1 para sim e -1 para não");
+        scanf("%d", &resp);
+    }
+    
+}
