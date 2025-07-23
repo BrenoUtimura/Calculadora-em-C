@@ -7,3 +7,4 @@ void operacao(int op);
 void calc_mat(int mat);
 void calc_fin(int fin);
 void baseNum(int baseNum);
+void calc_fis(int fis);

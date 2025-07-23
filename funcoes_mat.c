@@ -74,8 +74,8 @@ void operacao(int op){
 /* Funções de cálculos matemáticos */
 void calc_mat(int mat){
 
-    int resp, resp2, hipot, cateto, cat1, cat2, pot, potencia, num, i, n;
-    float a, b, c, x1, x2, delta, raio, area, base, baseM, altura, lado;
+    int resp, resp2, hipot, cateto, cat1, cat2, expo, num, i, n;
+    float a, b, c, D, x1, x2, y1, y2, delta, raio, area, base, baseM, altura, lado;
     float diagonalM, diagonalm;
 
     resp = 0;
@@ -88,17 +88,16 @@ void calc_mat(int mat){
         printf("1 - Dizima Períodica\n");
         printf("2 - Teorema de Pitagoras\n");
         printf("3 - Areas\n");
-        printf("4 - Potenciacao\n");
-        printf("5 - Exponenciacao");
-        printf("6 - Logaritmo\n");
-        printf("7 - Radiciacao\n");
-        printf("8 - Distancia entre dois pontos\n");
-        printf("9 - Equacao do Primeiro Grau\n");
-        printf("10 - Equacao do Segundo Grau\n");
-        printf("11 - Funcao do Primeiro Grau\n");
-        printf("12 - Funcao do Segundo Grau\n");
-        printf("13 - Funcao Exponencial\n");
-        printf("14 - Funcao Logaritma\n");
+        printf("4 - Exponenciacao\n");
+        printf("5 - Logaritmo\n");
+        printf("6 - Radiciacao\n");
+        printf("7 - Distancia entre dois pontos\n");
+        printf("8 - Equacao do Primeiro Grau\n");
+        printf("9 - Equacao do Segundo Grau\n");
+        printf("10 - Funcao do Primeiro Grau\n");
+        printf("11 - Funcao do Segundo Grau\n");
+        printf("12 - Funcao Exponencial\n");
+        printf("13 - Funcao Logaritma\n");
         printf("----------------------------------------------------\n");
 
         scanf("%d", &resp);
@@ -254,45 +253,49 @@ void calc_mat(int mat){
                 }
             break;
 
-            /* Potenciação */
+            /* Exponenciação */
             case 4: 
                 printf("Informe o número que deseja saber a potencia: \n");
                 scanf("%d", &num);
                 printf("Informe o indice da potencia que ele vai ter: \n");
                 scanf("%d", &n);
 
-                pot = pow(num, n);
+                expo = pow(num, n);
 
-                printf("A potencia de %d é: %d\n", num, pot);
+                printf("A potencia de %d é: %d\n", num, expo);
             break;
 
-            /* Exponenciação */
+            /* Logaritmo */
             case 5: 
                 /* code */
             break;
 
-            /* Logaritmo */
+            /* Radiciação */
             case 6: 
                 /* code */
             break;
 
-            /* Radiciação */
+            /* Distancia entre dois pontos */
             case 7: 
-                /* code */
+                printf("Quando digitar um valor de espaço para digitar o outro valor!\n");
+                printf("Informe os valores de x e y do ponto A: \n");
+                scanf("%f %f", &x1, &x2);
+                printf("Informe os valores de x e y do ponto B: \n");
+                scanf("%f %f", &y1, &y2);
+
+                D = pow((x2 - x1), 2) + pow((y2 - y1), 2);
+                D = sqrt(D);
+
+                printf("A distancia entre o ponto A e o ponto B é de: %.2f\n", D);
             break;
 
-            /* Distancia entre dois pontos */
+            /* Equação do primeiro grau */
             case 8: 
                 /* code */
             break;
 
-            /* Equação do primeiro grau */
-            case 9: 
-                /* code */
-            break;
-
             /* Equação do segundo grau */
-            case 10: 
+            case 9: 
                 printf("Informe os valores da formula ax² + bx + c = 0:\n");
                 printf("Informe o valor de A: ");
                 scanf("%f", &a);
@@ -327,22 +330,22 @@ void calc_mat(int mat){
             break;
 
             /* Função do primeiro grau */
-            case 11: 
+            case 10: 
                 /* code */
             break;
 
             /* Função do segundo grau */
-            case 12: 
+            case 11: 
                 /* code */
             break;
 
             /* Função Exponencial */
-            case 13: 
+            case 12: 
                 /* code */
             break;
 
             /* Função Logarítma */
-            case 14: 
+            case 13: 
                 /* code */
             break;
         }
