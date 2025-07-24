@@ -21,7 +21,7 @@ aplicação rodando ou finalizada);
 
 int main(void)
 {
-    int resp, op, calc, mat, fin, numBase;
+    int resp, op, calc, mat, fin, numBase, fis;
 
     calc = 1;
 
@@ -29,10 +29,11 @@ int main(void)
         printf("\nSeja Bem-vindo a Calculadora!\n");
         printf("-----------------------------\n");
         printf("Escolha a opção que desejar!\n");
-        printf("1 - Calcular operações tradicionais\n");
-        printf("2 - Cálculos Matemáticos\n");
-        printf("3 - Cálculos Financeiros\n");
+        printf("1 - Calcular operacoes tradicionais\n");
+        printf("2 - Calculos Matematicos\n");
+        printf("3 - Calculos Financeiros\n");
         printf("4 - Conversao de Bases Numéricas\n");
+        printf("5 - Calculos de Fisica\n");
         printf("---------------------------------\n");
         printf("Para parar o sistema digite 0!!\n\n");
 
@@ -66,6 +67,12 @@ int main(void)
                 numBase = resp;
 
                 baseNum(numBase);
+            break;
+
+            case 5:
+                fis = resp;
+
+                calc_fis(fis);
             break;
         
         }

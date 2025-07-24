@@ -272,7 +272,12 @@ void calc_mat(int mat){
 
             /* Radiciação */
             case 6: 
-                /* code */
+                printf("Informe o numero que vc quer descobrir a raiz: \n");
+                scanf("%d", &num);
+                printf("Infome o indice da raiz: \n");
+                scanf("%d", &i);
+
+                
             break;
 
             /* Distancia entre dois pontos */
