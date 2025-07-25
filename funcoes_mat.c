@@ -75,7 +75,7 @@ void operacao(int op){
 void calc_mat(int mat){
 
     int resp, resp2, hipot, cateto, cat1, cat2, expo, num, i, n;
-    float a, b, c, D, x1, x2, y1, y2, delta, raio, area, base, baseM, altura, lado;
+    float a, b, c, D, x, x1, x2, y1, y2, delta, raio, area, base, baseM, altura, lado;
     float diagonalM, diagonalm;
 
     resp = 0;
@@ -296,7 +296,13 @@ void calc_mat(int mat){
 
             /* Equação do primeiro grau */
             case 8: 
-                /* code */
+                printf("A formula do primeiro grau é ax + b = 0\n");
+                printf("Informe o valor de A: \n");
+                scanf("%f", &a);
+                printf("Informe o valor de B: \n");
+                scanf("%f", &b);
+
+                
             break;
 
             /* Equação do segundo grau */
