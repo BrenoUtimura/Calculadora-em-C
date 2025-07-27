@@ -75,7 +75,7 @@ void operacao(int op){
 void calc_mat(int mat){
 
     int resp, resp2, hipot, cateto, cat1, cat2, expo, num, i, n;
-    float a, b, c, D, x, x1, x2, y1, y2, delta, raio, area, base, baseM, altura, lado;
+    float a, b, c, D, x, x1, x2, y1, y2, delta, raio, area, base, baseM, altura, lado, pg, pgigual;
     float diagonalM, diagonalm;
 
     resp = 0;
@@ -296,13 +296,81 @@ void calc_mat(int mat){
 
             /* Equação do primeiro grau */
             case 8: 
-                printf("A formula do primeiro grau é ax + b = 0\n");
+                printf("A formula do primeiro grau é, exemplo: ax + b = 0\n");
                 printf("Informe o valor de A: \n");
-                scanf("%f", &a);
+                scanf("%fx", &a);
                 printf("Informe o valor de B: \n");
                 scanf("%f", &b);
+                printf("Digite o valor após o igual: \n");
+                scanf("%f", &pgigual);
 
-                
+                if(pgigual = 0){
+                    if(b < 0){
+                        /* ax - b + b = 0 + b */
+                        pg = b + (b * -1);/* Aqui estou fazendo apenas a parte do b */
+
+                        b = (b * -1) / a;
+                        a = a / a;
+
+                        if(a == 1){
+                            x = b;
+
+                            printf("O valor de X é: %.2f\n", x);
+                        }
+                        else{
+                            x = b / a;
+
+                            printf("O valor de X é: %.2f\n", x);
+                        }
+
+                        /* Depois que definimos o valor de x iremos provar se a equação é verdadeira ou não */
+                        if(x == pgigual){
+                            printf("A equação é verdadeira!!\n");
+                        }
+                        else{
+                            printf("A equação é falsa!!\n");
+                        }
+                    }
+                    else{
+                        if(b > 0){
+                            /* ax + b - b = 0 - b */
+                            pg = b + (b * -1);/* Aqui estou fazendo apenas a parte do b */
+
+                            b = (b * -1) / a;
+                            a = a / a;
+
+                            if(a == 1){
+                                x = b;
+
+                                printf("O valor de X é: %.2f\n", x);
+                            }
+                            else{
+                                x = b / a;
+
+                                printf("O valor de X é: %.2f\n", x);
+                            }
+
+                            /* Depois que definimos o valor de x iremos provar se a equação é verdadeira ou não */
+                            if(x == pgigual){
+                                printf("A equação é verdadeira!!\n");
+                            }
+                            else{
+                                printf("A equação é falsa!!\n");
+                            }
+                        }
+                    }
+                }
+                else{
+                    if(pgigual > 0){
+                        
+                    }
+                    else{
+                        if(pgigual < 0){
+
+                        }
+                    }
+                }
+
             break;
 
             /* Equação do segundo grau */
