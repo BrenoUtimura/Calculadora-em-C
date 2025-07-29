@@ -77,6 +77,7 @@ void calc_mat(int mat){
     int resp, resp2, hipot, cateto, cat1, cat2, expo, num, i, n;
     float a, b, c, D, x, x1, x2, y1, y2, delta, raio, area, base, baseM, altura, lado, pg, pgigual;
     float diagonalM, diagonalm;
+    double rad;
 
     resp = 0;
 
@@ -272,12 +273,37 @@ void calc_mat(int mat){
 
             /* Radiciação */
             case 6: 
-                printf("Informe o numero que vc quer descobrir a raiz: \n");
-                scanf("%d", &num);
-                printf("Infome o indice da raiz: \n");
-                scanf("%d", &i);
+                printf("Escolha uma das opções que deseja: \n");
+                printf("1 - Raiz quadrada\n");
+                printf("2 - Raiz de qualquer indice\n");
+                printf("-----------------------------------\n");
 
+                switch (resp2)
+                {
+                    case 1:
+                        printf("Informe o numero que vc deseja: \n");
+                        scanf("%d", &num);
+
+                        rad = sqrt(num);
+
+                        printf("A raiz de %d, é: %.2lf\n", num , rad);
+                    break;
+
+                    case 2:
+                        printf("Informe o numero que vc quer descobrir a raiz: \n");
+                        scanf("%d", &num);
+                        printf("Infome o indice da raiz: \n");
+                        scanf("%d", &i);
+
+                        rad = pow(num, 1/i);
+
+                        printf("A raiz de %d, é: %.2lf\n", num, rad);
+                    break;
                 
+                    default:
+                        printf("Opção errada! Escolha outra opção!!\n");
+                    break;
+                } 
             break;
 
             /* Distancia entre dois pontos */
