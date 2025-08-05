@@ -280,6 +280,7 @@ void calc_mat(int mat){
 
                 switch (resp2)
                 {
+                    /* Cálculo tradicional com a raiz quadrada */
                     case 1:
                         printf("Informe o numero que vc deseja: \n");
                         scanf("%d", &num);
@@ -289,6 +290,7 @@ void calc_mat(int mat){
                         printf("A raiz de %d, é: %.2lf\n", num , rad);
                     break;
 
+                    /* Cálculo da raiz com qualquer indice */
                     case 2:
                         printf("Informe o numero que vc quer descobrir a raiz: \n");
                         scanf("%d", &num);
@@ -300,6 +302,7 @@ void calc_mat(int mat){
                         printf("A raiz de %d, é: %.2lf\n", num, rad);
                     break;
                 
+                    /* Para se caso o usuário digitar uma opção que não esteja listada */
                     default:
                         printf("Opção errada! Escolha outra opção!!\n");
                     break;
