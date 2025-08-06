@@ -37,4 +37,6 @@ void calc_fis(int fis){
         break;
         
     }
+
+    return;
 }

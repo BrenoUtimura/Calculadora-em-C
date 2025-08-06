@@ -19,8 +19,8 @@ aplicação rodando ou finalizada);
 */
 
 
-int main(void)
-{
+int main(void){
+
     int resp, op, calc, mat, fin, numBase, fis;
 
     calc = 1;
@@ -69,13 +69,14 @@ int main(void)
                 baseNum(numBase);
             break;
 
+            /* Calcular as equações de física */
             case 5:
                 fis = resp;
 
                 calc_fis(fis);
             break;
-        
         }
+    }
     
     return 0;
 }

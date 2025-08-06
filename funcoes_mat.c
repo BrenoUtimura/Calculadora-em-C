@@ -9,8 +9,8 @@ void operacao(int op){
     char tipo_op;
 
     if(op == 1){
-        printf("\nPara poder para a execução da conta digite 0 no tipo de operação!!\n");
-        printf("Informe primeiro o icone da operacao que deseja fazer: \n");
+        printf("\nPara poder parar a execução da conta digite 0 no tipo de operação!!\n");
+        printf("Informe o tipo da operacao(+, -, *, /) que deseja fazer: \n");
 
         conta = 0;
 
@@ -65,8 +65,10 @@ void operacao(int op){
             }
 
             printf("Informe primeiro o icone da operacao que deseja fazer: \n");
-        }while(tipo_op == 0);
+        }while(tipo_op != 0);
     }
+
+    return;
 
 }
 
@@ -74,10 +76,9 @@ void operacao(int op){
 /* Funções de cálculos matemáticos */
 void calc_mat(int mat){
 
-    int resp, resp2, hipot, cateto, cat1, cat2, expo, num, i, n;
+    int resp, resp2, hipot, cateto, cat1, cat2, expo, num, i, n, incog;
     float a, b, c, D, x, x1, x2, y1, y2, delta, raio, area, base, baseM, altura, lado, pg, pgigual;
-    float diagonalM, diagonalm;
-    double rad;
+    float diagonalM, diagonalm, rad;
 
     resp = 0;
 
@@ -116,7 +117,7 @@ void calc_mat(int mat){
                 printf("1 - Sim   e   2 - Não");
                 scanf("%d", &resp2);
 
-                if(resp2 = 1){
+                if(resp2 == 1){
                     printf("Informe os valores dos catetos para definir a Hipotenusa\n");
                     printf("Cateto1:  ");
                     scanf("%d", &cat1);
@@ -287,7 +288,7 @@ void calc_mat(int mat){
 
                         rad = sqrt(num);
 
-                        printf("A raiz de %d, é: %.2lf\n", num , rad);
+                        printf("A raiz de %d, é: %.2f\n", num , rad);
                     break;
 
                     /* Cálculo da raiz com qualquer indice */
@@ -299,7 +300,7 @@ void calc_mat(int mat){
 
                         rad = pow(num, 1/i);
 
-                        printf("A raiz de %d, é: %.2lf\n", num, rad);
+                        printf("A raiz de %d, é: %.2f\n", num, rad);
                     break;
                 
                     /* Para se caso o usuário digitar uma opção que não esteja listada */
@@ -325,81 +326,117 @@ void calc_mat(int mat){
 
             /* Equação do primeiro grau */
             case 8: 
-                printf("A formula do primeiro grau é, exemplo: ax + b = 0\n");
-                printf("Informe o valor de A: \n");
-                scanf("%fx", &a);
-                printf("Informe o valor de B: \n");
-                scanf("%f", &b);
-                printf("Digite o valor após o igual: \n");
-                scanf("%f", &pgigual);
+                printf("A formula do primeiro grau de uma incognita e da seguinte forma: ax + b = 0\n");
+                printf("A formula do primeiro grau de duas incognitaa e da seguinte forma: ax + by + c = 0\n");
+                printf("A equacao do e de uma incognita ou duas?\n");
+                printf("Digite 1 ou 2\n");
+                scanf("%d", &incog);
 
-                if(pgigual = 0){
-                    if(b < 0){
-                        /* ax - b + b = 0 + b */
-                        pg = b + (b * -1);/* Aqui estou fazendo apenas a parte do b */
+                /* Caso for de uma incognita */
+                if(incog == 1){
+                    printf("Informe o valor de A: \n");
+                    scanf("%fx", &a);
+                    printf("Informe o valor de B: \n");
+                    scanf("%f", &b);
+                    printf("Digite o valor após o igual: \n");
+                    scanf("%f", &pgigual);
 
-                        b = (b * -1) / a;
-                        a = a / a;
-
-                        if(a == 1){
-                            x = b;
-
-                            printf("O valor de X é: %.2f\n", x);
-                        }
-                        else{
-                            x = b / a;
-
-                            printf("O valor de X é: %.2f\n", x);
-                        }
-
-                        /* Depois que definimos o valor de x iremos provar se a equação é verdadeira ou não */
-                        if(x == pgigual){
-                            printf("A equação é verdadeira!!\n");
-                        }
-                        else{
-                            printf("A equação é falsa!!\n");
-                        }
+                    /* Verificando se a é diferente de zero */
+                    if(a == 0){
+                        printf("Esquacao invalida!!\n");
+                        printf("Informe o valor de A que seja valido!!\n");
                     }
                     else{
-                        if(b > 0){
-                            /* ax + b - b = 0 - b */
-                            pg = b + (b * -1);/* Aqui estou fazendo apenas a parte do b */
+                        /* Para quando a equação for igual a zero */
+                        if(pgigual == 0){
+                            /* Para quando o meu b for menor do que zero */
+                            if(b < 0){
+                                /* ax - b + b = 0 + b */
+                                pg = b + (b * -1);/* Aqui estou fazendo apenas a parte do b */
 
-                            b = (b * -1) / a;
-                            a = a / a;
+                                b = (b * -1) / a;
+                                a = (a / a) - pg;
 
-                            if(a == 1){
-                                x = b;
+                                if(a == 1){
+                                    x = b;
 
-                                printf("O valor de X é: %.2f\n", x);
+                                    printf("O valor de X é: %.2f\n", x);
+                                }
+                                else{
+                                    x = b / a;
+
+                                    printf("O valor de X é: %.2f\n", x);
+                                }
+
+                                /* Depois que definimos o valor de x iremos provar se a equação é verdadeira ou não */
+                                if(x == pgigual){
+                                    printf("A equação é verdadeira!!\n");
+                                }
+                                else{
+                                    printf("A equação é falsa!!\n");
+                                }
                             }
                             else{
-                                x = b / a;
+                                /* Para quando o meu b for maior do que zero */
+                                if(b > 0){
+                                    /* ax + b - b = 0 - b */
+                                    pg = b + (b * -1);/* Aqui estou fazendo apenas a parte do b */
 
-                                printf("O valor de X é: %.2f\n", x);
+                                    b = (b * -1) / a;
+                                    a = (a / a) - pg;
+
+                                    if(a == 1){
+                                        x = b;
+
+                                        printf("O valor de X é: %.2f\n", x);
+                                    }
+                                    else{
+                                        x = b / a;
+
+                                        printf("O valor de X é: %.2f\n", x);
+                                    }
+
+                                    /* Depois que definimos o valor de x iremos provar se a equação é verdadeira ou não */
+                                    if(x == pgigual){
+                                        printf("A equação é verdadeira!!\n");
+                                    }
+                                    else{
+                                        printf("A equação é falsa!!\n");
+                                    }
+                                }
                             }
-
-                            /* Depois que definimos o valor de x iremos provar se a equação é verdadeira ou não */
-                            if(x == pgigual){
-                                printf("A equação é verdadeira!!\n");
+                        }
+                        else{
+                            /* Para quando a equacao tiver um resultado maior do que zero */
+                            if(pgigual > 0){
+                                
                             }
                             else{
-                                printf("A equação é falsa!!\n");
+                                /* Para quando a tiver um resultado menor do que zero */
+                                if(pgigual < 0){
+
+                                }
                             }
                         }
                     }
                 }
                 else{
-                    if(pgigual > 0){
-                        
+                    /* Caso for duas incognitas */
+                    if(incog == 2){
+                        printf("Informe o valor de A: \n");
+                        scanf("%fx", &a);
+                        printf("Informe o valor de B: \n");
+                        scanf("%f", &b);
+                        printf("Informe o valor de C:\n");
+                        scanf("%f", &c);
+                        printf("Digite o valor após o igual: \n");
+                        scanf("%f", &pgigual);
                     }
                     else{
-                        if(pgigual < 0){
-
-                        }
+                        printf("Quantidade de incognitas invalida!!\n");
                     }
                 }
-
+                
             break;
 
             /* Equação do segundo grau */
@@ -462,5 +499,6 @@ void calc_mat(int mat){
         printf("Digite 1 para sim e -1 para não");
         scanf("%d", &resp);
     }
-    
+
+    return;
 }
