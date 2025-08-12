@@ -13,5 +13,7 @@ o formato de cálculo da aplicação;
 
 - [ ] Após terminar de fazer toda a lógica dos cálculos construir uma interface gráfica em C#, ou seja, reconstruir a aplicação;
 
+- [ ] Colocar no código tanto em C quanto em C# a parte de geração de arquivos referente aos valores calculados no sistema;
+
 - [ ] Implementar a funcionalidade do Manim para criar os vídeos matemáticos do por que do resultado, então neste caso o código em C# terá que chamar o código em python que é feito o manim. Repositório do manim para poder utilizar: https://github.com/CSFelix/manim-videos; 
 
