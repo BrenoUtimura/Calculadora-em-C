@@ -2,6 +2,8 @@
 
 - [X] Completar a funcionalidade da função operação para fazer os cálculos tradicionais de uma calculadora;
 
+- [ ] Refazer a estrutura dos cálculos em modulkarização, transformando assim tudo em função que chama outras funções, para que assim fique um código de forma masi limpa de se analisar/verificar;
+
 - [ ] Montar a estrutura de interação do usuário com 
 o formato de cálculo da aplicação;
 
