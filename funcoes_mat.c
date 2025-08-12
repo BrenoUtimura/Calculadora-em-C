@@ -242,6 +242,7 @@ void calc_mat(int mat){
                         printf("A area desse Circulo e de: %.2f\n", area);
                     break;
 
+                    /* Are do Losango */
                     case 6:
                         printf("Informe o valor da Diagonal Maior: \n");
                         scanf("%f", &diagonalM);
@@ -278,6 +279,8 @@ void calc_mat(int mat){
                 printf("1 - Raiz quadrada\n");
                 printf("2 - Raiz de qualquer indice\n");
                 printf("-----------------------------------\n");
+
+                scanf("%d", &resp2);
 
                 switch (resp2)
                 {
@@ -502,3 +505,21 @@ void calc_mat(int mat){
 
     return;
 }
+
+/*
+void teorema_pitagoras(int resp2);
+void radiciacao(int resp2);
+void dizima_periodica();
+void logaritmo();
+void exponenciacao(int num, int n);
+void distancia_dois_pontos(int resp2);
+void equacao_primeiroGrua(int resp2);
+void equacao_segundoGrau(int resp2);
+void area_circulo();
+void area_quadrado();
+void area_trapezio();
+void area_triangulo();
+void area_retangulo();
+void area_circulo();
+void area_losango();
+*/
