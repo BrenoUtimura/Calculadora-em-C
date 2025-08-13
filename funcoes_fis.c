@@ -12,6 +12,7 @@ void calc_fis(int fis){
     printf("3 - Termodinamica\n");
     printf("4 - Eletromagnetismo\n");
     printf("5 - Mecanica\n");
+    printf("6 - Ondulatoria\n");
     printf("----------------------------------------\n\n");
 
     switch (resp)
@@ -35,8 +36,24 @@ void calc_fis(int fis){
         case 5:
             /* code */
         break;
+
+        case 6:
+            /* code */
+        break;
         
+        default:
+            printf("Opção errada!! Escolha outra opção por favor!\n");
+        break;
     }
 
     return;
 }
+
+/*
+void cinematica();
+void lei_newton();
+void termodinamica();
+void eletromagnetismo();
+void mecanica();
+void ondulatoria();
+*/

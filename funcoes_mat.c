@@ -117,55 +117,7 @@ void calc_mat(int mat){
                 printf("1 - Sim   e   2 - Não");
                 scanf("%d", &resp2);
 
-                if(resp2 == 1){
-                    printf("Informe os valores dos catetos para definir a Hipotenusa\n");
-                    printf("Cateto1:  ");
-                    scanf("%d", &cat1);
-
-                    printf("Cateto2:  ");
-                    scanf("%d", &cat2);
-
-                    cateto = pow(cat1, 2) + pow(cat2, 2);
-                    hipot = pow(cateto, 2);
-
-                    printf("O valor da hipotenusa é: %d", hipot);
-                }
-                else{
-                    if(resp2 == 2){
-                        printf("Coloque 0 para o valor que estiver faltando e caso tiver!\n");
-
-                        printf("Hipotenusa:  ");
-                        scanf("%d", &hipot);
-
-                        printf("Cateto1:  ");
-                        scanf("%d", &cat1);
-
-                        printf("Cateto2:  ");
-                        scanf("%d", &cat2);
-
-                        /* Nessa parte seria para quando apenas um dos catetos não possui valor
-                        informado neles */
-                        if(cat1 == 0){
-                            cat1 = pow(hipot, 2) - pow(cat2, 2);
-                            cat1 = pow(cat1, 2);
-
-                            printf("O valor do cateto A é: %d", cat1);
-                        }
-
-                        if(cat2 == 0){
-                            cat2 = pow(hipot, 2) - pow(cat1, 2);
-                            cat2 = pow(cat2, 2);
-
-                            printf("O valor do cateto A é: %d", cat2);
-                        }
-
-                        if(cat1 == 0 && cat2 == 0){
-                            printf("O teorema de pitagoras não pode ser resolvido pois precisa de pelo menos um dos catetos informados!!\n");
-
-                        }
-                    }
-                }
-
+                teorema_pitagoras(resp2);
             break;
 
             /* Areas */
@@ -282,49 +234,12 @@ void calc_mat(int mat){
 
                 scanf("%d", &resp2);
 
-                switch (resp2)
-                {
-                    /* Cálculo tradicional com a raiz quadrada */
-                    case 1:
-                        printf("Informe o numero que vc deseja: \n");
-                        scanf("%d", &num);
-
-                        rad = sqrt(num);
-
-                        printf("A raiz de %d, é: %.2f\n", num , rad);
-                    break;
-
-                    /* Cálculo da raiz com qualquer indice */
-                    case 2:
-                        printf("Informe o numero que vc quer descobrir a raiz: \n");
-                        scanf("%d", &num);
-                        printf("Infome o indice da raiz: \n");
-                        scanf("%d", &i);
-
-                        rad = pow(num, 1/i);
-
-                        printf("A raiz de %d, é: %.2f\n", num, rad);
-                    break;
-                
-                    /* Para se caso o usuário digitar uma opção que não esteja listada */
-                    default:
-                        printf("Opção errada! Escolha outra opção!!\n");
-                    break;
-                } 
+                radiciacao(resp2);
             break;
 
             /* Distancia entre dois pontos */
             case 7: 
-                printf("Quando digitar um valor de espaço para digitar o outro valor!\n");
-                printf("Informe os valores de x e y do ponto A: \n");
-                scanf("%f %f", &x1, &x2);
-                printf("Informe os valores de x e y do ponto B: \n");
-                scanf("%f %f", &y1, &y2);
-
-                D = pow((x2 - x1), 2) + pow((y2 - y1), 2);
-                D = sqrt(D);
-
-                printf("A distancia entre o ponto A e o ponto B é de: %.2f\n", D);
+                distancia_dois_pontos(resp2);
             break;
 
             /* Equação do primeiro grau */
@@ -506,20 +421,131 @@ void calc_mat(int mat){
     return;
 }
 
+/* Função do cálculo do Teorema de Pitagoras */
+void teorema_pitagoras(int resp2){
+
+    int cat1, cat2, hipot, cateto;
+
+    if(resp2 == 1){
+        printf("Informe os valores dos catetos para definir a Hipotenusa\n");
+        printf("Cateto1:  ");
+        scanf("%d", &cat1);
+
+        printf("Cateto2:  ");
+        scanf("%d", &cat2);
+
+        cateto = pow(cat1, 2) + pow(cat2, 2);
+        hipot = pow(cateto, 2);
+
+        printf("O valor da hipotenusa é: %d", hipot);
+    }
+    else{
+        if(resp2 == 2){
+            printf("Coloque 0 para o valor que estiver faltando e caso tiver!\n");
+
+            printf("Hipotenusa:  ");
+            scanf("%d", &hipot);
+
+            printf("Cateto1:  ");
+            scanf("%d", &cat1);
+
+            printf("Cateto2:  ");
+            scanf("%d", &cat2);
+
+            /* Nessa parte seria para quando apenas um dos catetos não possui valor
+            informado neles */
+            if(cat1 == 0){
+                cat1 = pow(hipot, 2) - pow(cat2, 2);
+                cat1 = pow(cat1, 2);
+
+                printf("O valor do cateto A é: %d", cat1);
+            }
+
+            if(cat2 == 0){
+                cat2 = pow(hipot, 2) - pow(cat1, 2);
+                cat2 = pow(cat2, 2);
+
+                printf("O valor do cateto A é: %d", cat2);
+            }
+
+            if(cat1 == 0 && cat2 == 0){
+                    printf("O teorema de pitagoras não pode ser resolvido pois precisa de pelo menos um dos catetos informados!!\n");
+
+            }
+        }
+    }
+
+    return;
+}
+
+/* Função do Cálculo da Radiciação */
+void radiciacao(int resp2){
+
+    int num, i;
+    float rad;
+
+    switch (resp2)
+    {
+        /* Cálculo tradicional com a raiz quadrada */
+        case 1:
+            printf("Informe o numero que vc deseja: \n");
+            scanf("%d", &num);
+
+            rad = sqrt(num);
+
+            printf("A raiz de %d, é: %.2f\n", num , rad);
+        break;
+
+        /* Cálculo da raiz com qualquer indice */
+        case 2:
+            printf("Informe o numero que vc quer descobrir a raiz: \n");
+            scanf("%d", &num);
+            printf("Infome o indice da raiz: \n");
+            scanf("%d", &i);
+
+            rad = pow(num, 1/i);
+
+            printf("A raiz de %d, é: %.2f\n", num, rad);
+        break;
+                
+        /* Para se caso o usuário digitar uma opção que não esteja listada */
+        default:
+            printf("Opção errada! Escolha outra opção!!\n");
+        break;
+    } 
+
+    return;
+}
+
+/* Função do Cálculo da distância entre dois pontos */
+void distancia_dois_pontos(int resp2){
+
+    float x1, x2, y1, y2, D;
+
+    printf("Quando digitar um valor de espaço para digitar o outro valor!\n");
+    printf("Informe os valores de x e y do ponto A: \n");
+    scanf("%f %f", &x1, &x2);
+    printf("Informe os valores de x e y do ponto B: \n");
+    scanf("%f %f", &y1, &y2);
+
+    D = pow((x2 - x1), 2) + pow((y2 - y1), 2);
+    D = sqrt(D);
+
+    printf("A distancia entre o ponto A e o ponto B é de: %.2f\n", D);
+
+    return;
+}
+
 /*
-void teorema_pitagoras(int resp2);
-void radiciacao(int resp2);
 void dizima_periodica();
 void logaritmo();
 void exponenciacao(int num, int n);
-void distancia_dois_pontos(int resp2);
 void equacao_primeiroGrua(int resp2);
 void equacao_segundoGrau(int resp2);
-void area_circulo();
-void area_quadrado();
-void area_trapezio();
-void area_triangulo();
-void area_retangulo();
-void area_circulo();
-void area_losango();
+void area_circulo(float raio);
+void area_quadrado(float lado);
+void area_trapezio(float baseM, float base, float altura);
+void area_triangulo(float base, float altura);
+void area_retangulo(float base, float altura);
+void area_losango(float diagonalM, float diagonalm);
 */
