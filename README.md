@@ -2,6 +2,8 @@
 
 - [X] Completar a funcionalidade da função operação para fazer os cálculos tradicionais de uma calculadora;
 
+- [ ] Implementar memória de cálculo dentro da aplicação no estilo da funcionalidade da calculadora mesmo;
+
 - [ ] Refazer a estrutura dos cálculos em modularização, transformando assim tudo em função que chama outras funções, para que assim fique um código de forma masi limpa de se analisar/verificar;
 
 - [ ] Montar a estrutura de interação do usuário com 
