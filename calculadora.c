@@ -21,7 +21,7 @@ aplicação rodando ou finalizada);
 
 int main(void){
 
-    int resp, op, calc, mat, fin, numBase, fis;
+    int resp, op, calc, mat, fin, numBase, fis, mo;
 
     calc = 1;
 
@@ -34,6 +34,7 @@ int main(void){
         printf("3 - Calculos Financeiros\n");
         printf("4 - Conversao de Bases Numéricas\n");
         printf("5 - Calculos de Fisica\n");
+        printf("6 - Conversor de moedas\n");
         printf("---------------------------------\n");
         printf("Para parar o sistema digite 0!!\n\n");
 
@@ -41,39 +42,46 @@ int main(void){
 
         switch (resp)
         {
-            /* Calcular operações tradicionais */
+            /* 1 - Calcular operações tradicionais */
             case 1:
                 op = resp;
 
                 operacao(op);
             break;
 
-            /* Cálculos Matemáticos */
+            /* 2 - Cálculos Matemáticos */
             case 2:
                 mat = resp;
 
                 calc_mat(mat);
             break;
 
-            /* Cálculos Financeiros */
+            /* 3 - Cálculos Financeiros */
             case 3:
                 fin = resp;
 
                 calc_fin(fin);
             break;
 
-            /* Conversao de Bases Numéricas */
+            /* 4 - Conversao de Bases Numéricas */
             case 4:
                 numBase = resp;
 
                 baseNum(numBase);
             break;
 
-            /* Calcular as equações de física */
+            /* 5 - Calcular as equações de física */
             case 5:
                 fis = resp;
 
                 calc_fis(fis);
+            break;
+
+            /* 6 - Conversões de moedas */
+            case 6:
+                mo = resp;
+
+                conversorCoin(mo);
             break;
         }
     }

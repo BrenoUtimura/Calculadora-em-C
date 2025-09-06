@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "arquivo.h"
 
 void calc_fis(int fis){
 

@@ -10,3 +10,4 @@ void baseNum(int baseNum);
 void calc_fis(int fis);
 void teorema_pitagoras(int resp2);
 void radiciacao(int resp2);
+void conversorCoin(int mo);
